@@ -102,21 +102,10 @@ export default class DropdownControl extends Element {
     */
     updateExpandedView() {
       this.expandedView = SVG.Group();
+      this.collapsedView.setAttribute("transform", `translate(${this.x},${this.y})`);
 
       let currSelection = SVG.Group();
       currSelection.classList.add('dropdown-control-menu-option');
-
-      // this.currSelectionText = new Text(0, 1, this.optionLabels[this.currentIndex]);
-      // this.currSelectionText.root.setAttribute('alignment-baseline','middle');
-      // this.currSelectionText.style.textAnchor = 'middle';
-
-      let currSelectionBox = new Rectangle(0, -16, this.textWidth*2+16, 32);
-      //this.currSelectionText.x = currSelectionBox.x + currSelectionBox.width/2;
-
-      currSelection.appendChild(currSelectionBox.root);
-      currSelection.appendChild(this.currSelectionText.root);
-
-      this.expandedView.appendChild(currSelection);
 
       let _this = this;
       let rectY = 32;
@@ -141,6 +130,7 @@ export default class DropdownControl extends Element {
           _this.expanded = false;
           _this.currentIndex = i;
           _this.currSelectionText.contents = label;
+          _this.onchange();
         };
 
         this.expandedView.appendChild(menuOption);
@@ -159,7 +149,7 @@ export default class DropdownControl extends Element {
     * Returns the text of the current selection in from the dropdown menu.
     */
     getCurrentSelection() {
-      return this.currSelectionText.contents;
+      return this.optionLabels[this.currentIndex];
     }
 
     /**

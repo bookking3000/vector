@@ -8,11 +8,11 @@ interactive.height = 300;
 interactive.root.style.border = "1px solid grey";
 
 let dropdown = interactive.dropdownControl(20, 60, ["red", "blue", "white", "purple"], 1);
-let circle = interactive.circle(450, 100, 30);
+let ellipse = interactive.ellipse(400,75,50,50);
 
-circle.addDependency(dropdown);
-circle.update = function(){
-    circle.style.fill = dropdown.getCurrentSelection();
+ellipse.addDependency(dropdown);
+ellipse.update = function(){
+    ellipse.style.fill = dropdown.getCurrentSelection();
 }
 
-circle.update();
+ellipse.update();
