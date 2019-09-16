@@ -31,17 +31,17 @@ export default class DropdownControl extends Element {
         this.currSelectionText = new Text(0, 1, this.optionLabels[this.currentIndex]);
         this.currSelectionText.root.setAttribute('alignment-baseline', 'middle');
         this.currSelectionText.style.textAnchor = 'middle';
-        let currSelectionBox = new Rectangle(0, -16, this.textWidth * 2 + 16, 32);
+        let currSelectionBox = new Rectangle(0, -16, this.textWidth * 3 + 16, 32);
         this.currSelectionText.x = currSelectionBox.x + currSelectionBox.width / 2;
         currSelection.appendChild(currSelectionBox.root);
         currSelection.appendChild(this.currSelectionText.root);
         let dropdownButton = SVG.Group();
         dropdownButton.classList.add('dropdown-control-button');
-        let buttonBox = new Rectangle(this.textWidth * 2 + 16, -16, 32, 32);
+        let buttonBox = new Rectangle(this.textWidth * 3 + 16, -16, 32, 32);
         let radius = 8;
-        let downArrow = new Path(` M ${radius + this.textWidth * 2 + 31} ${0}
-                                 L ${radius * Math.cos(-2 * Math.PI / 3) + this.textWidth * 2 + 31} ${radius * Math.sin(-2 * Math.PI / 3)}
-                                 L ${radius * Math.cos(-4 * Math.PI / 3) + this.textWidth * 2 + 31} ${radius * Math.sin(-4 * Math.PI / 3)}
+        let downArrow = new Path(` M ${radius + this.textWidth * 3 + 31} ${0}
+                                 L ${radius * Math.cos(-2 * Math.PI / 3) + this.textWidth * 3 + 31} ${radius * Math.sin(-2 * Math.PI / 3)}
+                                 L ${radius * Math.cos(-4 * Math.PI / 3) + this.textWidth * 3 + 31} ${radius * Math.sin(-4 * Math.PI / 3)}
                                  Z`);
         downArrow.style.fill = '#333333';
         dropdownButton.appendChild(buttonBox.root);
@@ -83,7 +83,7 @@ export default class DropdownControl extends Element {
             let optionText = new Text(0, 1 + rectY, label);
             optionText.root.setAttribute('alignment-baseline', 'middle');
             optionText.style.textAnchor = 'middle';
-            let optionBox = new Rectangle(0, -16 + rectY, this.textWidth * 2 + 16, 32);
+            let optionBox = new Rectangle(0, -16 + rectY, this.textWidth * 3 + 16, 32);
             optionText.x = optionBox.x + optionBox.width / 2;
             menuOption.appendChild(optionBox.root);
             menuOption.appendChild(optionText.root);

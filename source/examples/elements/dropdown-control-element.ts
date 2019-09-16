@@ -4,15 +4,15 @@ import DropdownControl from '../../elements/DropdownControl.js';
 
 let interactive = new Interactive(getScriptName());
 interactive.width = 768;
-interactive.height = 300;
+interactive.height = 500;
 interactive.root.style.border = "1px solid grey";
 
-let dropdown = interactive.dropdownControl(20, 60, ["red", "blue", "white", "purple"], 1);
-let ellipse = interactive.ellipse(400,75,50,50);
-
+let dropdown = interactive.dropdownControl(20, 60, ["20 px", "50 px", "100 px", "150 px", "200 px"], 0);
+let ellipse = interactive.ellipse(400,250,100,100);
+ellipse.style.fill = "purple";
 ellipse.addDependency(dropdown);
 ellipse.update = function(){
-    ellipse.style.fill = dropdown.getCurrentSelection();
+    ellipse.ry = +(dropdown.getCurrentSelection().split(" ")[0]);
 }
 
 ellipse.update();
