@@ -22,6 +22,7 @@ import RadioControl from './elements/RadioControl.js';
 import Plot from './elements/Plot.js';
 import Graph from './elements/Graph.js';
 import Map from './elements/Map.js';
+import DropdownControl from './elements/DropdownControl.js';
 /**
 * This class exposes the high level functionality of our library. Elements can
 * created and related together
@@ -210,6 +211,14 @@ export default class Interactive extends Element {
         let radioControl = new RadioControl(labels, x, y, index);
         this.controls.appendChild(radioControl.root);
         return radioControl;
+    }
+    /**
+    * Creates a dropdown control within this interactive at the position (x,y).
+    */
+    dropdownControl(x, y, optionLabels, defaultIndex) {
+        let dropdownControl = new DropdownControl(x, y, optionLabels, defaultIndex);
+        this.controls.appendChild(dropdownControl.root);
+        return dropdownControl;
     }
     /**
     * Creates a control point within this interactive at the position (x,y).
