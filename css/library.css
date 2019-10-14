@@ -94,3 +94,19 @@ path.element, line.element, rect.element, ellipse.element, circle.element, polyg
 .button text {
   fill: #ffffff;
 }
+
+.dropdown-control-button rect {
+  fill: #DAD9DC;
+}
+
+.dropdown-control-button:hover rect, path {
+  fill: #C7C1C1;
+}
+
+.dropdown-control-curr-selection-box:hover rect, text {
+  fill: #C7C1C1;
+}
+
+.dropdown-control-menu-option:hover rect, text {
+  fill: #C7C1C1;
+}

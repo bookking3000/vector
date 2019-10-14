@@ -15,6 +15,7 @@ import CheckBox from '../elements/input/check-box.js';
 import Control from '../elements/input/control.js';
 import ControlCircle from '../elements/input/control-circle.js';
 import RadioControl from '../elements/input/radio-control.js';
+import DropdownControl from '../elements/input/dropdown-control.js';
 import Scrubber from '../elements/input/scrubber.js';
 import Slider from '../elements/input/slider.js';
 // graph elements
@@ -259,6 +260,12 @@ export default class Interactive extends SVG {
     */
     radioControl(x, y, labels, index = 0) {
         return this.appendChild(new RadioControl(x, y, labels, index));
+    }
+    /**
+    * Creates a dropdown input at the position (x,y) within this interactive.
+    */
+    dropdownControl(x, y, labels, index = 0) {
+        return this.appendChild(new DropdownControl(x, y, labels, index));
     }
     /**
     * Creates a control point within this interactive at the position (x,y).
