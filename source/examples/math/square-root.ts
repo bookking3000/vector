@@ -23,7 +23,7 @@ interactive.text(interactive.width-interactive.originX-20, -7, 'x');
 let x = -unit, y = 20;
 for (let num = -1; num <= 9; num++) {
   interactive.line(x, 0, x, 3);
-  interactive.text(num == -1 ? x-7 : x-3.5, y, `${num}`).style.fontSize = '12';
+  interactive.text(num < 0 ? x-7 : x-3.5, y, `${num}`).style.fontSize = '12';
   x += unit;
 }
 
@@ -37,9 +37,9 @@ for (let num = 1; num <= 6; num++) {
   y -= unit;
 }
 
-// create square root circle and control
+// create square root circle and control along x axis
 let xControl = interactive.control(unit, 0);
-xControl.constrainToX();
+xControl.constrainWithinBox(unit, 0, interactive.width-interactive.originX, 0);
 
 let circle = interactive.circle(0, 0, unit);
 circle.update = function() {
