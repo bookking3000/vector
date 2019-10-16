@@ -1,6 +1,8 @@
-// import Interactive from '../../Interactive.js';
-// import { getScriptName } from '../../Util.js';
-// import DropdownControl from '../../elements/input/dropdown-control.js';
+/**
+* @title Dropdown Control Element
+* @description This interactive demonstrates the dropdown control element.
+* @tags [elements, input]
+*/
 import { Interactive, getScriptName } from '../../index.js';
 let interactive = new Interactive(getScriptName());
 interactive.width = 768;

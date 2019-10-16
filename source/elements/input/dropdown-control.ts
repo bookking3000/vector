@@ -10,7 +10,6 @@ import Input from '../input/Input.js';
 export default class DropdownControl extends Input {
 
     optionLabels: string[];
-
     currentIndex: number;
 
     textWidth: number;
@@ -18,17 +17,13 @@ export default class DropdownControl extends Input {
     expanded: boolean;
 
     currSelection: Group;
-
     currSelectionBox: Rectangle;
-
     currSelectionText: Text;
 
     collapsedView: Group;
-
     expandedView: Group;
 
     x: number;
-
     y: number;
 
 
