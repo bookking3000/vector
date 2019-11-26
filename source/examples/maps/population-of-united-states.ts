@@ -7,7 +7,8 @@
 */
 
 import {Interactive, getScriptName} from '../../index.js';
-import * as data from './maps-json.js';
+// import * as data from './maps-json.js';
+import * as data from './maps-json.js'
 import {usDensityMap as densityMap} from './us-pop-density.js';
 
 let interactive = new Interactive(getScriptName());

@@ -26,6 +26,10 @@ input.input {
 }
 
 .interactive {
+  /* max-width: 100%; */
+}
+
+.interactive {
   font-family: 'Helvetica Neue','Segoe UI','Helvetica','Arial', sans-serif;
   font-weight: normal;
   font-feature-settings: "kern", "liga", "clig", "calt";
@@ -34,21 +38,15 @@ input.input {
   user-select: none;
 }
 
-.default {
+.interactive path, line, rect, ellipse, circle, polygon {
   stroke:#404040;
   stroke-width:1px;
   fill:none;
 }
 
-.interactive text, span {
+.interactive text {
   fill: #333333;
   stroke: none;
-}
-
-.plot path, line, rect {
-  stroke:#404040;
-  stroke-width:1px;
-  fill:none;
 }
 
 .control > :first-child {
@@ -87,6 +85,7 @@ input.input {
 .button text {
   fill: #ffffff;
 }
+
 .grid line {
   vector-effect: non-scaling-stroke;
 }
